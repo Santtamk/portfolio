@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f0eee9;
+  --foreground: #1f2022;
+  --ink: #151618;
+  --body-ink: #3f4248;
+  --muted-ink: #6f747c;
+  --surface: #f8f6f2;
+  --panel-bg: #e9e5de;
+  --line: #d5d0c8;
+  --chip-bg: #e3dfd7;
+  --chip-ink: #2d3036;
+  --accent-soft: #d9d4cc;
+  --accent-ink: #1d1f23;
+  --header-bg: #f3f1ec;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-manrope);
+  --font-serif: var(--font-newsreader);
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(circle at 8% 4%, rgba(255, 255, 255, 0.5), transparent 28%),
+    linear-gradient(180deg, #f3f1ec 0%, var(--background) 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-manrope), "Segoe UI", sans-serif;
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(50, 54, 60, 0.16);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 26s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 26s linear infinite;
+}
+
+@media (max-width: 768px) {
+  .animate-marquee,
+  .animate-marquee-reverse {
+    animation-duration: 18s;
+  }
 }
