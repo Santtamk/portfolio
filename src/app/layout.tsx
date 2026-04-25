@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope, Newsreader, Geist } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SmoothScrollProvider } from "@/components/providers/smooth-scroll-provider";
@@ -40,6 +41,7 @@ export default function RootLayout({
           {children}
           <SiteFooter />
         </SmoothScrollProvider>
+        <Analytics />
       </body>
     </html>
   );
