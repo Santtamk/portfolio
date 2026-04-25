@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Lenis from "lenis";
+import { Toaster } from "react-hot-toast";
 
 type SmoothScrollProviderProps = {
   children: React.ReactNode;
@@ -30,5 +31,20 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
     };
   }, []);
 
-  return <>{children}</>;
+  return (
+    <>
+      {children}
+      <Toaster
+        position="bottom-right"
+        toastOptions={{
+          duration: 4200,
+          style: {
+            border: "1px solid var(--line)",
+            background: "var(--surface)",
+            color: "var(--ink)",
+          },
+        }}
+      />
+    </>
+  );
 }

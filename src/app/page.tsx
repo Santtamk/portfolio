@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Reveal } from "@/components/animations/reveal";
+import { ContactForm } from "@/components/contact/contact-form";
 import { AngledTechTickers } from "@/components/tech/angled-tech-tickers";
 import { Container } from "@/components/ui/container";
 import { SectionTitle } from "@/components/ui/section-title";
@@ -55,7 +56,10 @@ export default function Home() {
                 <ul className="mt-4 space-y-1.5 text-sm text-[var(--body-ink)] md:text-base">
                   {marketing.momentum.bullets.map((item) => (
                     <li key={item} className="flex items-start gap-2">
-                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--accent-ink)]" aria-hidden />
+                      <span
+                        className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--accent-ink)]"
+                        aria-hidden
+                      />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -77,7 +81,10 @@ export default function Home() {
                 <ul className="mt-4 space-y-1.5 text-sm text-[var(--body-ink)] md:text-base">
                   {marketing.direction.bullets.map((item) => (
                     <li key={item} className="flex items-start gap-2">
-                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--accent-ink)]" aria-hidden />
+                      <span
+                        className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--accent-ink)]"
+                        aria-hidden
+                      />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -130,12 +137,16 @@ export default function Home() {
         <Container>
           <Reveal>
             <div className="rounded-3xl border border-[0.8px] border-[var(--line)] bg-[var(--panel-bg)] p-7 md:p-8">
-              <p className="text-sm uppercase tracking-[0.18em] text-[var(--muted-ink)]">Quick intro</p>
-              <h2 className="mt-2 font-serif text-3xl text-[var(--ink)] md:text-[2.05rem]">{person.name}</h2>
+              <p className="text-sm uppercase tracking-[0.18em] text-[var(--muted-ink)]">
+                Quick intro
+              </p>
+              <h2 className="mt-2 font-serif text-3xl text-[var(--ink)] md:text-[2.05rem]">
+                {person.name}
+              </h2>
               <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--body-ink)] md:text-base">
-                I am not positioning myself as a web developer. My focus is solving practical
-                product and workflow problems with clear structure, calm UI, and measurable
-                outcomes.
+                I am not positioning myself as a web developer. My focus is
+                solving practical product and workflow problems with clear
+                structure, calm UI, and measurable outcomes.
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
                 <Link
@@ -169,12 +180,7 @@ export default function Home() {
               <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--body-ink)] md:text-base">
                 {contact.description}
               </p>
-              <a
-                href={`mailto:${person.email}`}
-                className="mt-5 inline-flex rounded-full bg-[var(--accent-soft)] px-5 py-3 text-sm font-semibold text-[var(--accent-ink)] transition hover:brightness-110"
-              >
-                {contact.ctaLabel}
-              </a>
+              <ContactForm ctaLabel={contact.ctaLabel} />
             </div>
           </Reveal>
         </Container>
