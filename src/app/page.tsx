@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Reveal } from "@/components/animations/reveal";
+import { ContactForm } from "@/components/contact/contact-form";
 import { AngledTechTickers } from "@/components/tech/angled-tech-tickers";
 import { Container } from "@/components/ui/container";
 import { SectionTitle } from "@/components/ui/section-title";
@@ -169,12 +170,7 @@ export default function Home() {
               <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--body-ink)] md:text-base">
                 {contact.description}
               </p>
-              <a
-                href={`mailto:${person.email}`}
-                className="mt-5 inline-flex rounded-full bg-[var(--accent-soft)] px-5 py-3 text-sm font-semibold text-[var(--accent-ink)] transition hover:brightness-110"
-              >
-                {contact.ctaLabel}
-              </a>
+              <ContactForm ctaLabel={contact.ctaLabel} />
             </div>
           </Reveal>
         </Container>
