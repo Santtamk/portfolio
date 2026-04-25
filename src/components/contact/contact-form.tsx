@@ -39,7 +39,9 @@ export function ContactForm({ ctaLabel }: ContactFormProps) {
       loading: "Sending your message...",
       success: "Message sent. I will get back to you shortly.",
       error: (error) =>
-        error instanceof Error ? error.message : "Something went wrong. Please try again.",
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again.",
     });
 
     try {
@@ -52,7 +54,10 @@ export function ContactForm({ ctaLabel }: ContactFormProps) {
   };
 
   return (
-    <form onSubmit={onSubmit} className="mt-6 grid gap-3 md:mt-7 md:grid-cols-2">
+    <form
+      onSubmit={onSubmit}
+      className="mt-6 grid gap-3 md:mt-7 md:grid-cols-2"
+    >
       <input
         type="text"
         name="name"
@@ -80,7 +85,10 @@ export function ContactForm({ ctaLabel }: ContactFormProps) {
       >
         {ctaLabel}
       </button>
-      <p className="self-center text-sm text-[var(--muted-ink)]" aria-live="polite">
+      <p
+        className="self-center text-sm text-[var(--muted-ink)]"
+        aria-live="polite"
+      >
         {result}
       </p>
     </form>
