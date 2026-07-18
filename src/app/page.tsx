@@ -1,4 +1,6 @@
+'use client';
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { Reveal } from "@/components/animations/reveal";
 import { ContactForm } from "@/components/contact/contact-form";
 import { AngledTechTickers } from "@/components/tech/angled-tech-tickers";
@@ -7,15 +9,30 @@ import { SectionTitle } from "@/components/ui/section-title";
 import { WorkCard } from "@/components/work/work-card";
 import { siteContent } from "@/lib/site-content";
 
+const Dither = dynamic(() => import("@/components/animations/dither"), {
+  ssr: false
+});
+
 export default function Home() {
   const { person, hero, marketing, works, tickerRows, contact } = siteContent;
 
   return (
     <main className="relative flex flex-1 flex-col gap-16 pb-16 pt-10 md:gap-24 md:pb-20 md:pt-12">
-      <section>
+      <section className="relative">
+        <div className="absolute inset-0 -m-4 rounded-3xl overflow-hidden opacity-30 h-96">
+          <Dither
+            waveSpeed={0.05}
+            waveFrequency={3}
+            waveAmplitude={0.3}
+            waveColor={[0.8, 0.75, 0.7]}
+            disableAnimation={false}
+            enableMouseInteraction={true}
+            mouseRadius={0.3}
+          />
+        </div>
         <Container>
           <Reveal>
-            <div className="rounded-3xl border border-[0.8px] border-[var(--line)] bg-[var(--surface)] p-6 shadow-[0_6px_20px_rgba(24,24,24,0.08)] md:p-9">
+            <div className="relative z-10 rounded-3xl border border-[0.8px] border-[var(--line)] bg-[var(--surface)] p-6 shadow-[0_6px_20px_rgba(24,24,24,0.08)] md:p-9">
               <p className="inline-flex rounded-full border border-[0.8px] border-[var(--line)] bg-[var(--panel-bg)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted-ink)]">
                 {hero.badge}
               </p>
@@ -188,3 +205,4 @@ export default function Home() {
     </main>
   );
 }
+
