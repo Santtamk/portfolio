@@ -7,7 +7,7 @@ import { siteContent } from "@/lib/site-content";
 export function SiteHeader() {
   const { brandMark, nav } = siteContent;
   const pathname = usePathname();
-  const logoNode = <span className="font-semibold text-white">{brandMark}</span>;
+  const logoNode = <span className="font-semibold text-[var(--ink)]">{brandMark}</span>;
 
   const activeHref = pathname === "/about" ? "/about" : "/";
 
@@ -16,7 +16,7 @@ export function SiteHeader() {
       <div className="py-3">
         <PillNav
           logo={logoNode}
-          logoAlt="SK Logo"
+          logoAlt="Santam Logo"
           items={nav}
           activeHref={activeHref}
           ease="power2.out"

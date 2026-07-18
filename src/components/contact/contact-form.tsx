@@ -21,7 +21,6 @@ export function ContactForm({ ctaLabel = "Send message" }: ContactFormProps) {
       setName("");
       setEmail("");
       setMessage("");
-      // eslint-disable-next-line no-console
       console.log("Contact form submitted", { name, email, message });
     } finally {
       setSubmitting(false);

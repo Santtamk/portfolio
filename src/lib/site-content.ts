@@ -14,10 +14,10 @@ export type WorkItem = {
 };
 
 export const siteContent = {
-  brandMark: "<SK/>",
+  brandMark: "Santam",
   person: {
     name: "Santam Kumai",
-    role: "Product Problem Solver",
+    role: "Product & Design Engineer",
     location: "Kalimpong, India",
     email: "hello@santamkumai.com",
   },
@@ -29,46 +29,46 @@ export const siteContent = {
     { label: "Contact", href: "/#contact" },
   ],
   hero: {
-    badge: "Open to product roles",
+    badge: "Understanding first, code second",
     title:
-      "I design clear digital experiences that remove friction from everyday workflows.",
+      "I design and build web experiences by understanding the goals, context, and people behind them.",
     description:
-      "I focus on simple systems, measurable improvements, and thoughtful details that help people complete tasks faster with less stress.",
+      "I don't just write code or drop templates. I study how your business operates, how your customers think, and design custom, high-performance web systems tailored to solve actual workflow friction.",
   },
   marketing: {
     momentum: {
-      eyebrow: "The gap",
+      eyebrow: "The standard approach",
       title:
-        "Your business is moving forward, but your website has not kept up.",
+        "Most websites are built as generic showcases, not tools.",
       description:
-        "Your offer is stronger than ever, but your current site may still look old, feel slow, or fail to explain your value clearly. That mismatch can quietly cost trust, leads, and growth.",
+        "They focus purely on tech stacks and standard grid layouts. But a website is a business tool—it must connect with your visitors, explain your value in seconds, and make them feel understood.",
       bullets: [
-        "Visitors leave before they understand what you do",
-        "Your messaging feels unclear or outdated",
-        "The site does not support your next stage of growth",
+        "Tech for tech's sake leaves visitors confused",
+        "Generic copy fails to build credibility or trust",
+        "Standard templates blend into the online noise",
       ],
     },
     direction: {
-      eyebrow: "What I bring",
-      title: "I know exactly what your site needs to do.",
+      eyebrow: "My Philosophy",
+      title: "I build for human outcomes, not just metrics.",
       description:
-        "It should build trust fast, explain your value simply, and guide the right people to take action without confusion.",
+        "I research your domain, learn your users' language, and design interfaces that guide them naturally. Every animation, layout choice, and word is chosen to serve a purpose.",
       bullets: [
-        "Clear story and positioning from the first screen",
-        "Focused pages built around business goals",
-        "Smooth experience across mobile and desktop",
+        "Deep alignment on your business targets and model",
+        "Clear visual narrative that reads like a structured story",
+        "Custom, high-contrast, lightweight web systems",
       ],
     },
   },
   about: {
-    title: "Simple products, clear outcomes.",
+    title: "Simple interfaces, clear outcomes.",
     description:
-      "I work across product strategy, UX structure, and delivery quality to solve operational pain points. My process stays practical: discover the friction, prototype the cleanest path, and measure what changes.",
+      "I work across product strategy, UX structure, and frontend engineering to solve operational pain points. My process stays practical: discover the user friction, design the cleanest path, and build it with performance-first code.",
   },
   contact: {
     title: "Let us build calm, useful products.",
     description:
-      "If your team needs someone focused on solving workflow problems and improving user confidence, I would love to talk.",
+      "If you need a developer who values understanding, design clarity, and technical details that build user confidence, I would love to talk.",
     ctaLabel: "Start a conversation",
   },
   works: [
@@ -76,14 +76,14 @@ export const siteContent = {
       slug: "kalimpong-bungalow",
       title: "Kalimpong Bungalow",
       summary:
-        "A cultural bed & breakfast in the hills of Kalimpong, shaped around heritage, quiet comfort, and direct booking clarity.",
-      category: "Hospitality Web Experience",
+        "A cultural bed & breakfast web experience, shaped by understanding the quiet luxury of heritage travel.",
+      category: "Hospitality & Heritage",
       problem:
-        "The homepage needed to communicate the stay experience quickly: heritage atmosphere, mountain views, room variety, and practical details like parking, pets, and booking access.",
+        "The property needed a digital home that communicates its heritage. Standard booking engines felt commercial and failed to convey the property's mountain-heritage character and tranquil atmosphere.",
       approach:
-        "Structured the homepage around a calm hero, a heritage-led story, clear room and gallery entry points, highlighted amenities, and a booking-focused call to action.",
+        "Designed a warm, photography-first narrative. Positioned large visual cards for room types, highlighted local mountain guides, and designed direct, low-friction inquiry paths.",
       outcome:
-        "The final presentation mirrors the property: warm, grounded, and easy to scan, with trust-building details that support direct enquiries and bookings.",
+        "A custom website that matches the slow, grounded atmosphere of the actual stay, building immediate trust and driving direct bookings.",
       tech: [
         "Private parking",
         "Nature & garden",
@@ -100,12 +100,12 @@ export const siteContent = {
       slug: "satori-stay",
       title: "Satori Stay",
       summary:
-        "A calm, hospitality-forward site showcasing curated stays with warm wood textures and panoramic hill views.",
-      category: "Hospitality Web Experience",
+        "Curated mountain retreat site, designed to address the visitor's need for instant atmospheric clarity and quick booking.",
+      category: "Hospitality & Nature",
       problem:
-        "The property needed a visual presentation that immediately communicates atmosphere, room types, and easy booking/contact options.",
+        "Travelers looking for nature escapes make quick decisions based on imagery and booking ease. The property lacked a structured way to present its forest views and offer direct contact.",
       approach:
-        "Prioritized large hero imagery, intimate portfolio sections, clear reservation call-to-actions, and trust-building guest reviews.",
+        "Prioritized large, warm photography of local woods, and connected them directly to WhatsApp for simple, immediate reservation queries.",
       outcome:
         "Visitors get a clear sense of the stay experience and can reserve quickly via WhatsApp — improving direct enquiries.",
       tech: ["Photography-led design", "Responsive layout", "Clear CTAs"],
@@ -117,14 +117,15 @@ export const siteContent = {
     {
       slug: "route-kind",
       title: "RouteKind",
-      summary: "Improved courier route planning for same-day urban delivery.",
-      category: "Logistics",
+      summary:
+        "Courier route planning board, built to reduce dispatcher cognitive load under time pressure.",
+      category: "Logistics & Operational Tools",
       problem:
-        "Dispatch teams manually adjusted routes every hour and missed delivery windows during peak traffic.",
+        "Dispatch teams manually adjust routes in high-stress, fast-moving shifts, resulting in route errors and late deliveries during peak traffic hours.",
       approach:
-        "Designed a route board with confidence scoring, quick overrides, and city heat layers for faster operational decisions.",
+        "Replaced complex tables with a visual routing board featuring confidence scores, quick overrides, and city heat layers for faster operational decisions.",
       outcome:
-        "On-time delivery improved while manual route changes per shift decreased significantly.",
+        "Dispatcher decision time decreased and on-time courier performance increased, without adding system complexity.",
       tech: ["Next.js", "Node", "GSAP", "PostgreSQL"],
       accent: "from-[#6b6a66] to-[#3f3e3a]",
     },

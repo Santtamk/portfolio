@@ -213,7 +213,7 @@ export default function PillNav({
   return (
     <div className={`w-full ${className}`}>
       <nav
-        className="mx-auto flex w-full items-center justify-center gap-3 px-5 md:gap-0 md:px-8"
+        className="mx-auto flex w-full items-center justify-between px-5 md:justify-center md:gap-0 md:px-8"
         aria-label="Primary"
         style={cssVars}
       >
@@ -222,7 +222,7 @@ export default function PillNav({
           aria-label={logoAlt}
           onMouseEnter={handleLogoEnter}
           ref={logoRef}
-          className="inline-flex h-(--logo-size) w-(--logo-size) items-center justify-center rounded-full bg-[#111111] font-serif text-base tracking-tight text-white md:relative md:z-10"
+          className="inline-flex h-(--logo-size) items-center justify-center rounded-full border border-[var(--line)] bg-transparent px-4 font-serif text-base font-semibold tracking-tight text-[var(--ink)] transition hover:border-[var(--accent-ink)] md:relative md:z-10"
         >
           {logo}
         </Link>
