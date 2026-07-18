@@ -2,25 +2,19 @@
 @import "tailwindcss";
 
 :root {
-  --font-manrope:
-    "Rubik", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
-    Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-newsreader:
-    "Rubik", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
-    Arial;
-  --background: #f0eee9;
-  --foreground: #1f2022;
-  --ink: #151618;
-  --body-ink: #3f4248;
-  --muted-ink: #6f747c;
-  --surface: #f8f6f2;
-  --panel-bg: #e9e5de;
-  --line: #d5d0c8;
-  --chip-bg: #e3dfd7;
-  --chip-ink: #2d3036;
-  --accent-soft: #d9d4cc;
-  --accent-ink: #1d1f23;
-  --header-bg: #f3f1ec;
+  --background: #f2f4f2;
+  --foreground: #3a4a40;
+  --ink: #19271e;
+  --body-ink: #3a4a40;
+  --muted-ink: #5e6f64;
+  --surface: #ffffff;
+  --panel-bg: #e7ece7;
+  --line: #d4dad4;
+  --chip-bg: #e7ece7;
+  --chip-ink: #19271e;
+  --accent-soft: #fdf0ed;
+  --accent-ink: #e76f51;
+  --header-bg: #f2f4f2;
 }
 
 @theme inline {
@@ -31,19 +25,11 @@
 }
 
 body {
-  background:
-    radial-gradient(circle at 8% 4%, rgba(255, 255, 255, 0.5), transparent 28%),
-    linear-gradient(180deg, #f3f1ec 0%, var(--background) 100%);
+  background: var(--background);
   color: var(--foreground);
   font-family:
-    "Rubik",
     var(--font-manrope),
-    "Segoe UI",
     system-ui,
-    -apple-system,
-    Roboto,
-    "Helvetica Neue",
-    Arial,
     sans-serif;
   min-height: 100vh;
 }

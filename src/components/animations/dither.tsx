@@ -1,4 +1,4 @@
-/* eslint-disable react/no-unknown-property */
+/* eslint-disable @typescript-eslint/no-namespace, @typescript-eslint/no-explicit-any, react-hooks/refs */
 'use client';
 
 import React, { useRef, useEffect } from 'react';

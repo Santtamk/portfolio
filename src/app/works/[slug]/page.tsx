@@ -63,28 +63,37 @@ export default async function WorkPage({ params }: WorkPageProps) {
 
             <div className="mt-8 grid gap-5 md:grid-cols-3">
               <section className="rounded-2xl border border-[var(--line)] bg-[var(--panel-bg)] p-5">
-                <h2 className="text-sm font-semibold uppercase tracking-[0.13em] text-[var(--muted-ink)]">
-                  Problem
+                <h2 className="font-serif text-lg text-[var(--ink)]">
+                  The Friction
                 </h2>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--body-ink)] md:text-base">
+                <p className="text-xs uppercase tracking-[0.1em] text-[var(--muted-ink)]">
+                  Understanding the Gap
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-[var(--body-ink)] md:text-base">
                   {work.problem}
                 </p>
               </section>
 
               <section className="rounded-2xl border border-[var(--line)] bg-[var(--panel-bg)] p-5">
-                <h2 className="text-sm font-semibold uppercase tracking-[0.13em] text-[var(--muted-ink)]">
-                  Approach
+                <h2 className="font-serif text-lg text-[var(--ink)]">
+                  The Narrative
                 </h2>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--body-ink)] md:text-base">
+                <p className="text-xs uppercase tracking-[0.1em] text-[var(--muted-ink)]">
+                  Designing for People
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-[var(--body-ink)] md:text-base">
                   {work.approach}
                 </p>
               </section>
 
               <section className="rounded-2xl border border-[var(--line)] bg-[var(--panel-bg)] p-5">
-                <h2 className="text-sm font-semibold uppercase tracking-[0.13em] text-[var(--muted-ink)]">
-                  Outcome
+                <h2 className="font-serif text-lg text-[var(--ink)]">
+                  The Outcome
                 </h2>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--body-ink)] md:text-base">
+                <p className="text-xs uppercase tracking-[0.1em] text-[var(--muted-ink)]">
+                  Measurable Impact
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-[var(--body-ink)] md:text-base">
                   {work.outcome}
                 </p>
               </section>
