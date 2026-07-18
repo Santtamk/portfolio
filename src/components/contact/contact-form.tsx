@@ -1,96 +1,80 @@
 "use client";
 
-import { FormEvent, useState } from "react";
-import { toast } from "react-hot-toast";
+import { useState } from "react";
 
 type ContactFormProps = {
-  ctaLabel: string;
+  ctaLabel?: string;
 };
 
-const WEB3FORMS_ACCESS_KEY = "310b508b-2368-4dd1-8a1e-b8a112e0dba9";
+export function ContactForm({ ctaLabel = "Send message" }: ContactFormProps) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
-export function ContactForm({ ctaLabel }: ContactFormProps) {
-  const [result, setResult] = useState("");
-
-  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setResult("Sending...");
-
-    const form = event.currentTarget;
-    const formData = new FormData(form);
-    formData.append("access_key", WEB3FORMS_ACCESS_KEY);
-    formData.append("subject", "New conversation request from portfolio");
-    formData.append("from_name", "Portfolio Contact Form");
-
-    const submitPromise = fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    }).then(async (response) => {
-      const data = await response.json();
-
-      if (!response.ok || !data.success) {
-        throw new Error(data.message || "Could not send your message.");
-      }
-
-      return data;
-    });
-
-    toast.promise(submitPromise, {
-      loading: "Sending your message...",
-      success: "Message sent. I will get back to you shortly.",
-      error: (error) =>
-        error instanceof Error
-          ? error.message
-          : "Something went wrong. Please try again.",
-    });
-
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setSubmitting(true);
     try {
-      await submitPromise;
-      setResult("Form submitted successfully.");
-      form.reset();
-    } catch {
-      setResult("Could not send the form. Please try again.");
+      // Placeholder: implement real submit endpoint as needed
+      await new Promise((r) => setTimeout(r, 600));
+      setName("");
+      setEmail("");
+      setMessage("");
+      // eslint-disable-next-line no-console
+      console.log("Contact form submitted", { name, email, message });
+    } finally {
+      setSubmitting(false);
     }
-  };
+  }
 
   return (
-    <form
-      onSubmit={onSubmit}
-      className="mt-6 grid gap-3 md:mt-7 md:grid-cols-2"
-    >
-      <input
-        type="text"
-        name="name"
-        placeholder="Your name"
-        required
-        className="rounded-2xl border border-[0.8px] border-[var(--line)] bg-[var(--panel-bg)] px-4 py-3 text-sm text-[var(--ink)] outline-none transition placeholder:text-[var(--muted-ink)] focus:ring-2 focus:ring-[var(--accent-ink)]/20"
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Your email"
-        required
-        className="rounded-2xl border border-[0.8px] border-[var(--line)] bg-[var(--panel-bg)] px-4 py-3 text-sm text-[var(--ink)] outline-none transition placeholder:text-[var(--muted-ink)] focus:ring-2 focus:ring-[var(--accent-ink)]/20"
-      />
-      <textarea
-        name="message"
-        placeholder="Tell me about your product, challenge, or goal"
-        required
-        rows={5}
-        className="rounded-2xl border border-[0.8px] border-[var(--line)] bg-[var(--panel-bg)] px-4 py-3 text-sm text-[var(--ink)] outline-none transition placeholder:text-[var(--muted-ink)] focus:ring-2 focus:ring-[var(--accent-ink)]/20 md:col-span-2"
-      />
-      <button
-        type="submit"
-        className="inline-flex items-center justify-center rounded-full bg-[var(--accent-ink)] px-5 py-3 text-sm font-semibold text-[var(--surface)] transition hover:opacity-92"
-      >
-        {ctaLabel}
-      </button>
-      <p
-        className="self-center text-sm text-[var(--muted-ink)]"
-        aria-live="polite"
-      >
-        {result}
-      </p>
+    <form onSubmit={handleSubmit} className="mt-6 grid gap-3">
+      <div className="grid gap-2 md:grid-cols-2">
+        <label className="flex flex-col">
+          <span className="text-xs font-medium text-(--muted-ink)">Name</span>
+          <input
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="mt-1 rounded-lg border border-(--line) bg-(--surface) px-3 py-2 text-sm"
+            placeholder="Your name"
+            required
+          />
+        </label>
+
+        <label className="flex flex-col">
+          <span className="text-xs font-medium text-(--muted-ink)">Email</span>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="mt-1 rounded-lg border border-(--line) bg-(--surface) px-3 py-2 text-sm"
+            placeholder="you@example.com"
+            required
+          />
+        </label>
+      </div>
+
+      <label className="flex flex-col">
+        <span className="text-xs font-medium text-(--muted-ink)">Message</span>
+        <textarea
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          className="mt-1 min-h-[120px] rounded-lg border border-(--line) bg-(--surface) px-3 py-2 text-sm"
+          placeholder="How can I help?"
+          required
+        />
+      </label>
+
+      <div className="mt-2">
+        <button
+          type="submit"
+          disabled={submitting}
+          className="inline-flex items-center rounded-full bg-[var(--accent-ink)] px-5 py-3 text-sm font-semibold text-[var(--surface)] transition disabled:opacity-60"
+        >
+          {submitting ? "Sending…" : ctaLabel}
+        </button>
+      </div>
     </form>
   );
 }

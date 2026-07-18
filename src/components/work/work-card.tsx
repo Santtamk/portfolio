@@ -32,18 +32,29 @@ export function WorkCard({ work }: WorkCardProps) {
         </>
       ) : null}
 
-      <div className={`relative z-10 flex h-full flex-col ${work.featuredImage ? "justify-between" : ""}`}>
+      <div
+        className={`relative z-10 flex h-full flex-col ${work.featuredImage ? "justify-between" : ""}`}
+      >
         <div className="mb-4 flex items-center justify-between gap-3">
-          <span className={`text-xs font-semibold uppercase tracking-[0.15em] ${isFeaturedDark ? "text-white/80" : "text-(--muted-ink)"}`}>
+          <span
+            className={`text-xs font-semibold uppercase tracking-[0.15em] ${isFeaturedDark ? "text-white/80" : "text-(--muted-ink)"}`}
+          >
             {work.category}
           </span>
-          <span className={`h-2.5 w-16 rounded-full bg-linear-to-r ${work.accent}`} aria-hidden />
+          <span
+            className={`h-2.5 w-16 rounded-full bg-linear-to-r ${work.accent}`}
+            aria-hidden
+          />
         </div>
 
-        <h3 className={`font-serif text-2xl ${isFeaturedDark ? "text-white" : "text-(--ink)"}`}>
+        <h3
+          className={`font-serif text-2xl ${isFeaturedDark ? "text-white" : "text-(--ink)"}`}
+        >
           {work.title}
         </h3>
-        <p className={`mt-2.5 text-sm leading-relaxed md:text-base ${isFeaturedDark ? "text-white/84" : "text-(--body-ink)"}`}>
+        <p
+          className={`mt-2.5 text-sm leading-relaxed md:text-base ${isFeaturedDark ? "text-white/84" : "text-(--body-ink)"}`}
+        >
           {work.summary}
         </p>
 
@@ -62,14 +73,29 @@ export function WorkCard({ work }: WorkCardProps) {
           ))}
         </ul>
 
-        <Link
-          href={`/works/${work.slug}`}
-          className={`mt-auto pt-5 inline-flex items-center text-sm font-semibold transition group-hover:translate-x-1 ${
-            isFeaturedDark ? "text-white" : "text-(--accent-ink)"
-          }`}
-        >
-          View case story
-        </Link>
+        <div className="mt-auto pt-5 flex items-center gap-4">
+          <Link
+            href={`/works/${work.slug}`}
+            className={`inline-flex items-center text-sm font-semibold transition group-hover:translate-x-1 ${
+              isFeaturedDark ? "text-white" : "text-(--accent-ink)"
+            }`}
+          >
+            View case story
+          </Link>
+
+          {work.siteUrl ? (
+            <a
+              href={work.siteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-flex items-center text-sm font-medium underline-offset-2 ${
+                isFeaturedDark ? "text-white/90" : "text-(--accent-ink)"
+              }`}
+            >
+              Visit site
+            </a>
+          ) : null}
+        </div>
       </div>
     </article>
   );

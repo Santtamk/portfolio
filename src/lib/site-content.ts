@@ -10,6 +10,7 @@ export type WorkItem = {
   accent: string;
   featuredImage?: string;
   featuredTheme?: "light" | "dark";
+  siteUrl?: string;
 };
 
 export const siteContent = {
@@ -29,14 +30,16 @@ export const siteContent = {
   ],
   hero: {
     badge: "Open to product roles",
-    title: "I design clear digital experiences that remove friction from everyday workflows.",
+    title:
+      "I design clear digital experiences that remove friction from everyday workflows.",
     description:
       "I focus on simple systems, measurable improvements, and thoughtful details that help people complete tasks faster with less stress.",
   },
   marketing: {
     momentum: {
       eyebrow: "The gap",
-      title: "Your business is moving forward, but your website has not kept up.",
+      title:
+        "Your business is moving forward, but your website has not kept up.",
       description:
         "Your offer is stronger than ever, but your current site may still look old, feel slow, or fail to explain your value clearly. That mismatch can quietly cost trust, leads, and growth.",
       bullets: [
@@ -81,31 +84,40 @@ export const siteContent = {
         "Structured the homepage around a calm hero, a heritage-led story, clear room and gallery entry points, highlighted amenities, and a booking-focused call to action.",
       outcome:
         "The final presentation mirrors the property: warm, grounded, and easy to scan, with trust-building details that support direct enquiries and bookings.",
-      tech: ["Private parking", "Nature & garden", "Pet friendly", "Balcony view"],
+      tech: [
+        "Private parking",
+        "Nature & garden",
+        "Pet friendly",
+        "Balcony view",
+      ],
       accent: "from-[#5f564d] to-[#2f2a25]",
-      featuredImage: "https://www.kalimpongbungalow.com/_next/image?url=%2Fimg%2Fslides%2Fslide_1.jpg&w=1080&q=75",
+      featuredImage:
+        "https://www.kalimpongbungalow.com/_next/image?url=%2Fimg%2Fslides%2Fslide_1.jpg&w=1080&q=75",
       featuredTheme: "dark",
+      siteUrl: "https://kalimpongbungalow.com",
     },
     {
-      slug: "ledger-light",
-      title: "LedgerLight",
+      slug: "satori-stay",
+      title: "Satori Stay",
       summary:
-        "Built a lightweight finance dashboard for small business owners.",
-      category: "SMB Finance",
+        "A calm, hospitality-forward site showcasing curated stays with warm wood textures and panoramic hill views.",
+      category: "Hospitality Web Experience",
       problem:
-        "Owners relied on scattered spreadsheets and struggled to spot cashflow risk before payroll deadlines.",
+        "The property needed a visual presentation that immediately communicates atmosphere, room types, and easy booking/contact options.",
       approach:
-        "Created one glanceable dashboard with category health, short-term forecasting, and smart reminders tied to due dates.",
+        "Prioritized large hero imagery, intimate portfolio sections, clear reservation call-to-actions, and trust-building guest reviews.",
       outcome:
-        "Users identified payment risks earlier and reported faster weekly financial reviews.",
-      tech: ["React", "TypeScript", "Tailwind", "Lenis"],
+        "Visitors get a clear sense of the stay experience and can reserve quickly via WhatsApp — improving direct enquiries.",
+      tech: ["Photography-led design", "Responsive layout", "Clear CTAs"],
       accent: "from-[#8a857d] to-[#5a5751]",
+      featuredImage: "https://avinaybnb.vercel.app/hero&room.jpeg",
+      featuredTheme: "dark",
+      siteUrl: "https://avinaybnb.vercel.app",
     },
     {
       slug: "route-kind",
       title: "RouteKind",
-      summary:
-        "Improved courier route planning for same-day urban delivery.",
+      summary: "Improved courier route planning for same-day urban delivery.",
       category: "Logistics",
       problem:
         "Dispatch teams manually adjusted routes every hour and missed delivery windows during peak traffic.",
@@ -119,7 +131,14 @@ export const siteContent = {
   ] satisfies WorkItem[],
   tickerRows: [
     ["Next.js", "TypeScript", "Tailwind CSS", "GSAP", "Lenis", "React 19"],
-    ["Design Systems", "Accessibility", "Responsive UI", "Performance", "User Flows", "Product Thinking"],
+    [
+      "Design Systems",
+      "Accessibility",
+      "Responsive UI",
+      "Performance",
+      "User Flows",
+      "Product Thinking",
+    ],
   ],
 };
 
